@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), transparent), url(/static/4.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 1;
+    text-align: right;
+    padding-right: 10px; 
+    font-size: 5px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.fundraising{
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    padding-top: 75px;
+}
+h2{
+    font-size: 60px;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.486);
+    color: white;
+}
+.fra h3{
+    font-size: 42px;    
+    font-weight: 650;
+    text-align: center;
+}
+.fra span{
+    background: black;
+    height: 3px;
+    width: 45%;
+    position: absolute;
+    left: 27.4%;
+}
+.medicines , .kenels , .clothes , .food{ 
+    margin-top: 5%;
+    margin-left: 507px;
+    margin-right: 507px;
+    margin-bottom: 5%;
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    justify-items: center;
+}
+.meds .box1 , .home .box1 , .vests .box1 , .bone .box1{
+    height: 260px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.meds img , .home img , .vests img , .bone img{
+    padding: 20px;
+    width: 500px;
+}
+.meds p , .home p , .vests p , .bone p{
+    display: none;
+    font-size: 20px;
+    color: black;   
+}
+.text01{
+    text-align: center;
+    font-size: 24px;    
+}
+.hide1{
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.fas{
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.medicines:hover , .kenels:hover , .clothes:hover , .food:hover{
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); 
+}
+.hide1 .goal span{
+    height: 10px;
+    display: block;
+    float: left;
+    margin-bottom: 2%;
+}
+.hide1 .goal h1{
+    font-size: 26px;
+    font-weight: 700;
+}
+.hide1 .goal h4{
+    font-size: 22px;
+    font-weight: 700;
+}
+.hide1 .goal h5{
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-flex;
+}
+span{
+    width: 66%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+span + span {
+    width: 34%;
+    background-color: gray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.text01{
+    text-align: center;
+    font-size: 24px;    
+}
+.hide1{
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.contri , .pills , .hammer , .df , .share , .tshirt{
+    background-color: #5A7189;
+    color: white;
+    padding: 5px;
+}
+.contri:hover , .pills:hover , .df:hover, .tshirt:hover , .hammer:hover , .share:hover{
+    transform: scale(1.05);
+}
+span{
+    width: 66%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+span + span {
+    width: 34%;
+    background-color: gray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.kenels span{
+    width: 50.54%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.kenels span + span {
+    width: 49.45%;
+    background-color: gray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.clothes span{
+    width: 43.27%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.clothes span + span {
+    width: 56.72%;
+    background-color: gray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.food span{
+    width: 70.35%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.food span + span {
+    width: 29.64%;
+    background-color: gray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+footer{
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #707070, #333333);
+    color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    width: 225px;
+} 
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col p{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.col h3{
+    width: fit-content;
+    position: relative;
+    font-size: 24px;
+}
+.col2{
+    flex-basis: 25%;
+    padding-top: 62px;
+}
+.col2 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col2 ul{
+    list-style: none;
+}
+.col2 ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+.col2 ul li a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+.col2 h5{
+    font-size: 20px;
+}
+.col3{
+    flex-basis: 25%;
+    padding-top: 62px;
+
+}
+.col3 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col3 h5{
+    font-size: 20px;
+}
+.col3 a{
+    text-decoration: none;
+    color: white;
+}
+.col3 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    border-radius: 50%;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 800px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(73, 73, 73) url(/static/up2white.png);
+    border-radius: 50%;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrolltop.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}

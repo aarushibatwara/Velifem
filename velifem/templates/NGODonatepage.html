@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), transparent), url(/static/straydog.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.donate{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    padding-top: 75px;
+}
+.donate h2{
+    font-size: 60px;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.212);
+    color: white;
+}
+.donationtext{
+    width: 63%;
+    margin: auto;
+    text-align: center;
+
+}
+fieldset{
+    width: 60%;
+    margin: 5% auto;
+    align-content: center;
+}
+.donationtext p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.411);
+}
+#donationform .form{
+    top: 180px;
+    padding: 10px;
+    align-items: center;
+}
+#donationform h2{
+    text-align: center;
+    align-content: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+    padding-top: 10px;
+}
+#donationform .name{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#donationform .email{
+    width: 45%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#donationform .email2{
+    width: 45%;
+    display: none;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;}
+#donationform .address{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#donationform #myNumtwo{
+    width: 45%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#donationform #myNum{
+    width: 10%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 14px;
+}
+.texttwo{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+#donationform .others{
+    width: 40%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+.purpose, .type, .currency:required:invalid{
+    color: rgb(102, 102, 102);
+}
+option[value=""][disabled]{
+    display: none;
+}
+option{
+    color: black;
+}
+#donationform .purpose, .type{
+    width: 30%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#donationform .paymentmethod{
+    width: 40%;
+    padding: 20px, 10px; 
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+    font-size: 22px;
+    margin-left: 17%;
+}
+#donationform .amount{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#donationform .currency{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+textarea{
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+    height: 10vh;
+    font-size: 18px;
+    font-family: sans-serif;
+    padding: 10px;
+    resize: none;
+}
+.textthree{
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 30px;
+}
+.donate-btn{
+    width: 10%;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    background: linear-gradient(to right, #09203fbb, #537895b7);
+    color: white;
+    margin: auto;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.donate-btn a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}    
+footer{
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #707070, #333333);
+    color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    width: 225px;
+} 
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col p{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.col h3{
+    width: fit-content;
+    position: relative;
+    font-size: 24px;
+}
+.col2{
+    flex-basis: 25%;
+    padding-top: 62px;
+}
+.col2 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col2 ul{
+    list-style: none;
+}
+.col2 ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+.col2 ul li a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+.col2 h5{
+    font-size: 20px;
+}
+.col3{
+    flex-basis: 25%;
+    padding-top: 62px;
+
+}
+.col3 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col3 h5{
+    font-size: 20px;
+}
+.col3 a{
+    text-decoration: none;
+    color: white;
+}
+.col3 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    border-radius: 50%;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 800px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(73, 73, 73) url(/static/up2white.png);
+    border-radius: 50%;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrolltop.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}
+
+.payment{
+    margin-top: 5%;
+    margin-left: 42%;
+    margin-right: 42%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.qr .box1{
+    background: pink;
+    height: 260px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+.qr img{
+    border: solid 2px black;
+    padding: 20px;
+    width: 250px;
+}
+.text01{
+    text-align: center;
+    font-size: 24px;
+}
+    </style>
+</head>
+<body>
+    <div class="scrolltop" onclick ="scrollToTop();">
+    </div>
+    <section class="header">
+        <nav>
+            <div class="background">
+            <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png"> </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;Home</a></i></li> </b>
+                <b> <li><a href="/templates/NGOissuespage"><i class="fas fa-exclamation-triangle">&nbsp;&nbsp;Issues</a></i></li> </b>
+                <b>  <li><a href="/templates/NGODonatepage"><i class="fas fa-donate">&nbsp;&nbsp;Donate</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp;Adopt a Pet</a></i></li> </b>
+                <b> <li><a href="/templates/SOS"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp;About Us</a></i></li> </b>
+                <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp;Contact</a></i></li> </b>
+                <b><!-- <li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li>--> </b>
+            </div>
+        </nav> 
+        <section class="donate">
+            <h2>DONATE</h2>
+            <span></span>
+            </section>
+            <section class="donationtext">
+                <br><br><br>
+            <p>Thank you for the donations you made towards <b>The VELIFEM</b> to help the animals.
+            <br>Your donations, be it small or large, help us provide the necesary care and affection to the animals in need.</p>
+        </section>
+        </section>
+        <section id="donationform">
+    <fieldset>
+            <h2>Donation Form</h2> <br><br>
+            <span></span>
+            <center>
+            <form method="post" action=" " enctype="multipart/form-data">
+                {% csrf_token %}
+                <br><br><input type="email" name="email" class="email2" placeholder="Email ID">
+                <p><input type = "text" name="first_name" class = "name" placeholder = "First Name" pattern="[A-Za-z]+"   required>
+                &nbsp;&nbsp;&nbsp;
+                <input type="text" class="name" name="last_name" pattern="[A-Za-z]+"   placeholder="Last Name" required></p>
+                <p><br><br><input type="email" name="email" class="email" placeholder="Email ID" required></p>
+                <p><br><br><input class="address" pattern="[A-Za-z]+"  name="country" placeholder="Country" required>
+                    &nbsp;&nbsp;&nbsp;
+                <input class="address" name="state" pattern="[A-Za-z]+"  placeholder="State" required>
+                &nbsp;&nbsp;&nbsp;
+                <input class="address" name="city" pattern="[A-Za-z]+"  placeholder="City" required></p>
+                <p><br><br><input type="text" name="country_code" id="myNum" placeholder="Country Code" maxlength="3" required>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="text" name="contact_number" pattern="[789][0-9]{9}" id="myNumtwo" placeholder="Contact Number" maxlength="10" required></p>
+                    <br>
+                    <p><br><input type="text" class="others" name="amount" placeholder="Amount" required>
+                        <!--<div class="texttwo"> Purpose Of Donation - &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        <select class="purpose" name="purpose" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">General Donation</option>
+                        <option value="2">To feed the animals</option>
+                        <option value="3">For veterinary care</option>
+                        <option value="4">For building homes for animals</option>
+                        <option value="5">Towards other specific cause specific cause</option>
+                    </select>
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="text" name="other_purpose" class="others" placeholder="If Other specific cause, Please Mention"></p>
+                        <br>
+                    <p><div class="texttwo"> Type of Donation - &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        <select class="type" name="donation_type" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">One Time Donation</option>
+                        <option value="2">Monthly Donation</option>
+                        <option value="3">Quarterly Donation</option>
+                        <option value="4">Half-Yearly Donation</option>
+                        <option value="5">Yearly Donation</option>
+                    </select></p>
+                    <br>
+                    <p>
+                        <div class="texttwo"> Currency and Amount - &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        
+                        <select class="currency" name="currency" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">USD</option>
+                        <option value="2">EUR</option>
+                        <option value="3">JPY</option>
+                        <option value="4">GBP</option>
+                        <option value="5">CHF</option>
+                        <option value="6">CAD</option>
+                        <option value="7">AUD</option>
+                        <option value="8">ZAR</option>
+                        <option value="9">AED</option>
+                        <option value="10">INR</option>
+                    </select>
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="text" class="others" name="amount" placeholder="Amount" required></p>
+                        <br>
+                    </p>
+                        <br>
+                    <p><div class="texttwo"> Payment Method - &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        <div class="paymentmethod" name="payment_method" required>
+                        <input type="radio" name="payment">&nbsp;&nbsp;Credit / Debit Card <br>
+                        <input type="radio" name="payment">&nbsp;&nbsp;E-Wallets<br>
+                        <input type="radio" name="payment">&nbsp;&nbsp;UPI<br>
+                        <input type="radio" name="payment">&nbsp;&nbsp;Money Order / Demand Draft <br>
+                    </div></p>-->
+                </center>
+                    <br>
+                    <p>
+                        <div class="textthree">Notes (if any)</div> <br>
+                        <textarea id="comments" name="notes" placeholder="Please write additional comments here (if any)." rows="4" cols="40" name="comments"></textarea>
+                    </p>
+                    <section class="payment">
+                        <div class="qr">
+                            <img src="/static/qrcode.jpg">
+                            <div class="text01"> <b> Scan QR Code </b> </div>
+                        </div>
+                    </section>
+            <center>
+                <br> <input type="submit" class="donate-btn" value="Donate">
+            </form>
+            </center>
+    </fieldset>
+    </section>
+    <section id="footererer">
+        <footer>
+            <div class="row">
+                <div class="col">
+                    <img src="/static/Logo2white.png" class="logo">
+                    <p>The VELIFEM is an NGO for stray animals
+                       to provide them with all the necesary
+                       health care and attention they deserve.
+                    </p>
+                    <br> <br>
+                    <h3>Donate</h3><br>
+                    <p>We rely on you to donate in order<br>
+                       to rescue, feed and provide<br>
+                       necessary care and to keep fighting<br>
+                       for the animals.
+                    </p>
+                </div>
+                <div class="col2">
+                    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful Links</h3> <br>
+                    <p> 
+                        <ul>
+                            <li><a href="/templates/NGOAboutus">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What We Do</a></li><br>
+                                <li><a href="/templates/NGOCareers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Careers</a></li><br>
+                                <li><a href="/templates/NGOFund">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fundraising</a></li><br>
+                                <li><a href="/templates/NGOVolunteer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Become a Volunteer</a></li><br>
+                                <li><a href="https://www.privacypolicygenerator.info/live.php?token=ggggxz4rBWLJRqrFm3QkyOhojH4PXDRn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a></li><br>
+                                <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=clAqjo4wjhWmYAP3BfeQJj2LZTXXGhxR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms and Conditions</a></li><br>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col3">
+                    <h3>Contact Us</h3><br>
+                    <p>
+                       <h5> Email </h5> <br>
+                       For Queries - <br> 
+                       <a href="mailto: queries.thevelifemngo@gmail.com">  queries.thevelifemngo@gmail.com <br> <br></a>
+                           For Registering a Complaint - <br>  
+                           <a href="mailto: fac.thevelifemngo@gmail.com"> fac.thevelifemngo@gmail.com <br></a> 
+                       <br>
+                       <h5> Call Us </h5> <br>
+                       Surat - 12345xxxx <br>
+                       Mumbai - 99875xxxx <br>
+                       Delhi - 84523xxxx <br>
+                    </p>
+                </div>
+                <div class="col2">
+                    <h3>Headquarters</h3><br>
+                    <p> 
+                        Bunglow Number xx, XYZ Society,<br>
+                        Near ABC Row House, EFG Marg,<br>
+                        Adajan, Surat - 395xxx.
+                    </p>
+                    <p> 
+                        Bunglow Number xx, XYZ Society,<br>
+                        Near ABC Row House, EFG Marg,<br>
+                        Bhayender, Mumbai - 400xxx.
+                    </p>
+                    <p> 
+                        Bunglow Number xx, XYZ Society,<br>
+                        Near ABC Row House, EFG Marg,<br>
+                        Karol Bagh, Delhi - 110xxx.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var scroll = document.querySelector('.scrolltop');
+            scroll.classList.toggle("active" , window.scrollY > 500)
+        })
+        function scrollToTop(){
+            window.scrollTo({
+                top: 0
+            })
+        }
+    </script>
+</body>
+</html> 

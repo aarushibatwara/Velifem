@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="/static/loginregister.css">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+    <div class="hero"> 
+        <div class="form-box">
+            <div class = "button-box">
+                <div id="btn"></div>
+                <button type = "button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type = "button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class = "social-icons">
+                <img src = "/static/google.jpg">
+                <img src = "/static/Instagram.jpg"> 
+                <img src = "/static/meta.jpg">
+                <img src = "/static/twitter.jpg">
+            </div>
+            <form id="login" class = "input-group">
+             <br><input type = "text" name="user_id" class = "input-field" placeholder="User ID" required> <br>
+             <br><input type = "password" name="password" class = "input-field" placeholder="Enter Password" id="myinput" required> 
+                <span id="myFunction" class="eye" onclick="myFunction()">
+                    <i id="hide1" class="fas fa-eye"></i> <i id="hide2" class="fas fa-eye-slash"></i> 
+                </span> </p>
+            <input type="checkbox" class="check-box"><span>Remember Password</span> <br>
+            <br> <input type="submit" name="login" class="submit-btn2" value="Login">
+            </form>
+            <form id="register" class = "input-group">
+                <br><input type = "text" name="user_id" class = "input-field" placeholder="User ID" required> <br>
+                <br> <input type = "email" name="email" class = "input-field" placeholder="Email ID" required> 
+                <br>
+                <br><input type = "password" name="password" class = "input-field" placeholder="Enter Password" id="myvalue" required>
+                <span id="myWhatever" class="eye2" onclick="myWhatever()">
+                    <i id="hide3" class="fas fa-eye"></i> <i id="hide4" class="fas fa-eye-slash"></i> 
+                </span> </p>
+                <br><input type = "password" name="confirm_password" class = "input-field" placeholder="Confirm Password" id="myseen" required> 
+                <span id="myIdontknow" class="eye3" onclick="myIdontknow()">
+                    <i id="hide5" class="fas fa-eye"></i> <i id="hide6" class="fas fa-eye-slash"></i> 
+                </span> </p>
+                <input type="checkbox" class="check-box"><span>I agree to the Terms and Conditions of <center> <b>The Velifem.</b></center> </span> 
+                <input type="checkbox" class="check-box2"><span> I acknowledge the site's Privacy Policy </span> <br>
+               <br><input type="submit" name="register" class="submit-btn2" value="Register">
+            </form>
+        </div>
+    </div>   
+
+    <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+                x.style.left = "-480px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+
+            function myFunction(){
+                var x = document.getElementById("myinput");
+                var y = document.getElementById("hide1");
+                var z = document.getElementById("hide2");
+
+                if(x.type === 'password'){
+                    x.type = "text";
+                    y.style.display = "block";
+                    z.style.display = "none";
+                }
+                else{
+                    x.type = "password";
+                    y.style.display = "none";
+                    z.style.display = "block";
+                }
+            }
+
+            function myWhatever(){
+                var x = document.getElementById("myvalue");
+                var y = document.getElementById("hide3");
+                var z = document.getElementById("hide4");
+
+                if(x.type === 'password'){
+                    x.type = "text";
+                    y.style.display = "block";
+                    z.style.display = "none";
+                }
+                else{
+                    x.type = "password";
+                    y.style.display = "none";
+                    z.style.display = "block";
+                }
+            }
+            function myIdontknow(){
+                var x = document.getElementById("myseen");
+                var y = document.getElementById("hide5");
+                var z = document.getElementById("hide6");
+
+                if(x.type === 'password'){
+                    x.type = "text";
+                    y.style.display = "block";
+                    z.style.display = "none";
+                }
+                else{
+                    x.type = "password";
+                    y.style.display = "none";
+                    z.style.display = "block";
+                }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet</title>
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), transparent), url(/static/dog.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.adopt{
+    width: 22%;
+    margin: auto;
+    text-align: center;
+    padding-top: 75px;
+}
+.adopt h2{
+    font-size: 60px;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.212);
+    color: white;
+}
+.adopttext{
+    width: 42%;
+    margin: auto;
+    text-align: center;
+}
+.adopttext p{
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.411);
+}
+.message{
+    text-align: center;
+    justify-content: center;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    margin: 3%;
+}
+.message h1{
+    font-weight: 700;
+    font-size: 36px;
+}
+.message h4{
+    font-weight: 500;
+    font-size: 30px;
+}
+.filter{
+    font-size: 20px;
+    cursor: pointer;
+}
+.filter a{
+    color: black;
+}
+.adoptioneverything{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.pets .box1{
+    background: pink;
+    height: 260px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+.pets img{
+    border-radius: 50%;
+    padding: 20px;
+    width: 220px;
+}
+.pets p{
+    display: none;
+    font-size: 20px;
+    color: black;   
+}
+.pets .box1:hover{
+    height: 280px;
+    transition: 1.5s;
+}
+.pets img:hover{
+    border-radius: 15%;
+    transition: 1.5s;
+}
+.text01{
+    text-align: center;
+    font-size: 24px;    
+}
+.hide1{
+    display: none;
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.pets .box1:hover + .hide1{
+    display: block;
+    color: #000;
+    background-color: pink;
+}
+.adopt-btn{
+    width: 10%;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    background: linear-gradient(to right, #e58c8a, #eec0c6);
+    color: white;
+    margin: auto;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.adopt-btn a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}  
+.adopt-btn:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+footer{
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #707070, #333333);
+    color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    width: 225px;
+} 
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col p{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.col h3{
+    width: fit-content;
+    position: relative;
+    font-size: 24px;
+}
+.col2{
+    flex-basis: 25%;
+    padding-top: 62px;
+}
+.col2 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col2 ul{
+    list-style: none;
+}
+.col2 ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+.col2 ul li a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+.col2 h5{
+    font-size: 20px;
+}
+.col3{
+    flex-basis: 25%;
+    padding-top: 62px;
+
+}
+.col3 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col3 a{
+    text-decoration: none;
+    color: white;
+}
+.col3 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.col3 h5{
+    font-size: 20px;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    border-radius: 50%;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 800px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(73, 73, 73) url(/static/up2white.png);
+    border-radius: 50%;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrolltop.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}
+    </style>
+</head>
+<body>
+    <div class="scrolltop" onclick ="scrollToTop();">
+    </div>
+    <section class="header">
+        <nav>
+            <div class="background">
+            <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png"> </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;Home</a></i></li> </b>
+                <b> <li><a href="/templates/NGOissuespage"><i class="fas fa-exclamation-triangle">&nbsp;&nbsp;Issues</a></i></li> </b>
+                <b>  <li><a href="/templates/NGODonatepage"><i class="fas fa-donate">&nbsp;&nbsp;Donate</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp;Adopt a Pet</a></i></li> </b>
+                <b> <li><a href="/templates/SOS"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp;About Us</a></i></li> </b>
+                <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp;Contact</a></i></li> </b>
+                <b><!-- <li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li>--> </b>
+            </div>
+        </nav> 
+        <section class="adopt">
+            <h2>Adopt a Pet</h2>
+            <span></span>
+            </section>
+            <section class="adopttext">
+                <br><br><br>
+            <p>Your new <b>Furry Friend</b> is waiting for you!</p>
+        </section>
+        </section>
+        <section class="message">
+            <h1>Protect, Rescue, Adopt, Love, Care and Repeat.</h1>
+            <h4>BECAUSE THEY MATTER!</h4>
+        </section>
+        <center>
+        <section class="adoptioneverything">
+            <div class="pets">
+                <div class="box1">
+                <img src="/static/goldenretriever.png">
+                <div class="text01"> <b> Charlie </b> </div>
+            </div>
+                <div class="hide1"> Breed – Golden Retriever <br>
+                    Age – 4 Months<br>
+                    Color – Light Golden<br>
+                    Gender - Male <br>
+                    Vaccinations – 2 doses <br>
+                 </div>
+            </div>
+            </div>
+            <div class="pets">
+                <div class="box1">
+                <img src="/static/britishshorthair.png">
+                <div class="text01"> <b> Smokey </b> </div>
+            </div>
+                <div class="hide1">Breed – British Shorthair <br>
+                    Age – 7 Months <br>
+                    Color – Grey <br>
+                    Gender - Female <br>
+                    Vaccinations – 1 dose <br>
+                 </div>
+            </div>
+            </div>
+            <div class="pets">
+                <div class="box1">
+                <img src="/static/labrador.png">
+                <div class="text01"> <b> Rudy </b> </div>
+            </div>
+                <div class="hide1">Breed – Labrador <br>
+                    Age – 13 Months <br>
+                    Color – Light Golden <br>
+                    Gender - Female <br>
+                    Vaccinations – Fully vaccinated <br>
+                    </div>
+            </div>
+            </div>
+            <div class="pets">
+                <div class="box1">
+                <img src="/static/indianperiah.png">
+                <div class="text01"> <b> Jasper </b> </div>
+            </div>
+                <div class="hide1">Breed – Indian Periah <br>
+                    Age – 08 Months <br>
+                    Color – Cream <br>
+                    Gender - Male <br>
+                    Vaccinations – Fully vaccinated <br>
+                    </div>
+            </div>
+            </div>
+        </section>
+        </center>
+        <center>
+            <section class="adoptioneverything">
+                <div class="pets">
+                    <div class="box1">
+                    <img src="/static/siberianhusky.png">
+                    <div class="text01"> <b> Geralt </b> </div>
+                </div>
+                    <div class="hide1">Breed – Siberian Husky<br>
+                        Age – 14 Months <br>
+                        Color – White and Gray <br>
+                        Gender - Female <br>
+                        Vaccinations – Fully vaccinated <br> 
+                        </div>
+                </div>
+                </div>
+                <div class="pets">
+                    <div class="box1">
+                    <img src="/static/siamesecat.png">
+                    <div class="text01"> <b> Ursula </b> </div>
+                </div>
+                    <div class="hide1">Breed – Siamese Cat<br>
+                        Age – 06 Months <br>
+                        Color – White<br>
+                        Gender - Male <br>
+                        Vaccinations – 1 dose<br>
+                        </div>
+                </div>
+                </div>
+                <div class="pets">
+                    <div class="box1">
+                    <img src="/static/1.jpeg">
+                    <div class="text01"> <b> Thea </b> </div>
+                </div>
+                    <div class="hide1">Breed – Golden Retriever <br>
+                        Age – 13 Months <br>
+                        Color – Cream <br>
+                        Gender - Female <br>
+                        Vaccinations - Vaccinated <br> 
+                        </div>
+                </div>
+                </div>
+                <div class="pets">
+                    <div class="box1">
+                    <img src="/static/mainecoon.png">
+                    <div class="text01"> <b> Cirila </b> </div>
+                </div>
+                    <div class="hide1">Breed – Maine Coon <br>
+                        Age – 07 Months <br>
+                        Color – Brown <br>
+                        Gender - Female <br>
+                        Vaccinations – 1 dose<br>
+                        </div>
+                </div>
+                </div>
+            </section>
+            </center>
+            <center>
+                <section class="adoptioneverything">
+                    <div class="pets">
+                        <div class="box1">
+                        <img src="/static/shihtzu.png">
+                        <div class="text01"> <b> Bailey </b> </div>
+                    </div>
+                        <div class="hide1">Breed – Shih Tzu<br>
+                            Age – 03 Months <br>
+                            Color – White and Brown <br>
+                            Gender - Male <br>
+                            Vaccinations – 1 dose<br>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="pets">
+                        <div class="box1">
+                        <img src="/static/scotishfold.png">
+                        <div class="text01"> <b> Molly </b> </div>
+                    </div>
+                        <div class="hide1">Breed – Scottish Fold<br>
+                            Age – 05 Months <br>
+                            Color – Brown <br>
+                            Gender - Female <br>
+                            Vaccinations – 1 dose<br>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="pets">
+                        <div class="box1">
+                        <img src="/static/shihtzu2.jpg">
+                        <div class="text01"> <b> Barney </b> </div>
+                    </div>
+                        <div class="hide1">Breed – Shih Tzu<br>
+                            Age – 10 Months <br>
+                            Gender - Male <br>
+                            Color – Cream and White <br>
+                            Vaccinations - 1 dose <br>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="pets">
+                        <div class="box1">
+                        <img src="/static/ip2.jpeg">
+                        <div class="text01"> <b> Sophie </b> </div>
+                    </div>
+                        <div class="hide1">Breed – Indian Pariah<br>
+                            Age – 04 Months <br>
+                            Gender - Male <br>
+                            Color – Light Golden <br>
+                            Vaccinations - 2 doses <br>
+                            </div>
+                    </div>
+                    </div>
+                </section>
+                </center>
+                <center>
+                    <section class="adoptioneverything">
+                        <div class="pets">
+                            <div class="box1">
+                            <img src="/static/sc.jpeg">
+                            <div class="text01"> <b> Bubba </b> </div>
+                        </div>
+                            <div class="hide1">Breed – Spotted Cat <br>
+                                Age – 04 Months <br>
+                                Color – Cream <br>
+                                Gender - Female <br>
+                                Vaccinations – Fully Vaccinated<br>
+                                </div>
+                        </div>
+                        </div>
+                        <div class="pets">
+                            <div class="box1">
+                            <img src="/static/sc2.jpeg">
+                            <div class="text01"> <b> Finley </b> </div>
+                        </div>
+                            <div class="hide1">Breed – Siamese Cat <br>
+                                Age – 08 Months <br>
+                                Color – Light Brown <br>
+                                Gender - Male <br>
+                                Vaccinations – Fully Vaccinated<br>
+                                </div>
+                        </div>
+                        </div>
+                        <div class="pets">
+                            <div class="box1">
+                            <img src="/static/ish.jpg">
+                            <div class="text01"> <b> Duncan </b> </div>
+                        </div>
+                            <div class="hide1">Breed – Syberian Husky <br>
+                                Age – 15 Months <br>
+                                Gender - Male <br>
+                                Color – White and Black <br>
+                                Vaccinations - Fully Vaccinated <br>
+                                </div>
+                        </div>
+                        </div>
+                        <div class="pets">
+                            <div class="box1">
+                            <img src="/static/persiancat.png">
+                            <div class="text01"> <b> Yennefer </b> </div>
+                        </div>
+                            <div class="hide1">Breed – Persian Cat <br>
+                                Age – 05 Months <br>
+                                Color – White <br>
+                                Gender - Male <br>
+                                Vaccinations – Fully Vaccinated<br>
+                                </div>
+                        </div>
+                    </div>
+                    </section>
+                    <br> <button type="button" class="adopt-btn"><a href="/templates/NGOAdoptform"> Adopt </a></button>
+                    </center>
+                    <section id="footererer">
+                        <footer>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="/static/Logo2white.png" class="logo">
+                                    <p>The VELIFEM is an NGO for stray animals
+                                       to provide them with all the necesary
+                                       health care and attention they deserve.
+                                    </p>
+                                    <br> <br>
+                                    <h3>Donate</h3><br>
+                                    <p>We rely on you to donate in order<br>
+                                       to rescue, feed and provide<br>
+                                       necessary care and to keep fighting<br>
+                                       for the animals.
+                                    </p>
+                                </div>
+                                <div class="col2">
+                                    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful Links</h3> <br>
+                                    <p> 
+                                        <ul>
+                                            <li><a href="/templates/NGOAboutus">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What We Do</a></li><br>
+                                            <li><a href="/templates/NGOCareers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Careers</a></li><br>
+                                            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fundraising</a></li><br>
+                                            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Become a Volunteer</a></li><br>
+                                            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a></li><br>
+                                            <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms and Conditions</a></li><br>
+                                        </ul>
+                                    </p>
+                                </div>
+                                <div class="col3">
+                                    <h3>Contact Us</h3><br>
+                                    <p>
+                                       <h5> Email </h5> <br>
+                                       For Queries - <br> 
+                                       <a href="mailto: queries.thevelifemngo@gmail.com">  queries.thevelifemngo@gmail.com <br> <br></a>
+                                       For Registering a Complaint - <br>  
+                                       <a href="mailto: fac.thevelifemngo@gmail.com"> fac.thevelifemngo@gmail.com <br></a> 
+                                       <br>
+                                       <h5> Call Us </h5> <br>
+                                       Surat - 12345xxxx <br>
+                                       Mumbai - 99875xxxx <br>
+                                       Delhi - 84523xxxx <br>
+                                    </p>
+                                </div>
+                                <div class="col2">
+                                    <h3>Headquarters</h3><br>
+                                    <p> 
+                                        Bunglow Number xx, XYZ Society,<br>
+                                        Near ABC Row House, EFG Marg,<br>
+                                        Adajan, Surat - 395xxx.
+                                    </p>
+                                    <p> 
+                                        Bunglow Number xx, XYZ Society,<br>
+                                        Near ABC Row House, EFG Marg,<br>
+                                        Bhayender, Mumbai - 400xxx.
+                                    </p>
+                                    <p> 
+                                        Bunglow Number xx, XYZ Society,<br>
+                                        Near ABC Row House, EFG Marg,<br>
+                                        Karol Bagh, Delhi - 110xxx.
+                                    </p>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                    <script type="text/javascript">
+                        window.addEventListener("scroll", function(){
+                            var scroll = document.querySelector('.scrolltop');
+                            scroll.classList.toggle("active" , window.scrollY > 500)
+                        })
+                        function scrollToTop(){
+                            window.scrollTo({
+                                top: 0
+                            })
+                        }
+                    </script>
+                </body>
+                </html> 

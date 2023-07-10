@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <title>VELIFEM</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.slider1, .slider2, .slider3, .slider4{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+img{
+    width: 110%;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%); 
+}
+
+.slideshow-text-one{
+    max-width: 50%;
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10rem, 5rem;
+    
+}
+.slideshow-text-one h4{
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+    background: black;
+}
+.slideshow-text-one p{
+    font-size: 3rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    padding-right: 1.5px;
+}
+.slideshow-text-one span{
+    background: black;
+    height: 3px;
+    width: 600px;
+    position: absolute;
+    left: 0;
+    bottom: 37%;
+}
+
+.slideshow-text-two{
+    max-width: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    padding: 10rem, 5rem;
+}
+.slideshow-text-two h4{
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+}
+.slideshow-text-two p{
+    font-size: 3rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-align: center;
+}
+.slideshow-text-two span{
+    background: white;
+    height: 2px;
+    width: 700px;
+    position: absolute;
+    left: 5%;
+    bottom: 53%;
+}
+
+.slideshow-text-three{
+    max-width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10rem, 5rem;
+}
+.slideshow-text-three h4{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+}
+.slideshow-text-three p{
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-align: center;
+}
+.slideshow-text-three span{
+    background: black;
+    height: 2px;
+    width: 700px;
+    position: absolute;
+    left: 0;
+    bottom: 43%;
+}
+
+.slideshow-text-four{
+    max-width: 50%;
+    position: absolute;
+    top: 70%;
+    left: 3%;
+    transform: translateY(-50%);
+    color: black;
+    padding: 10rem, 5rem;
+}
+.slideshow-text-four h4{
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+.slideshow-text-four p{
+    font-size: 3rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-align: center;
+}
+.slideshow-text-four span{
+    background: white;
+    height: 2px;
+    width: 710px;
+    position: absolute;
+    left: 0;
+    bottom: 40%;
+    right: 70%;
+}
+.slider1{
+    animation: slide1 10s linear infinite;
+}.slider2{
+    animation: slide2 10s linear infinite;
+}.slider3{
+    animation: slide3 10s linear infinite;
+}.slider4{
+    animation: slide4 10s linear infinite;
+}
+@keyframes slide1{
+    0%{
+        visibility: visible;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: hidden;
+    }
+    75%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+@keyframes slide2{
+    0%{
+        visibility: hidden;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: visible;
+    }
+    75%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+@keyframes slide3{
+    0%{
+        visibility: hidden;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: hidden;
+    }
+    75%{
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+@keyframes slide4{
+    0%{
+        visibility: hidden;
+    }
+    25%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: hidden;
+    }
+    75%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+.overlay{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(rgba(185, 185, 185, 0.041), rgba(179, 179, 179, 0));
+}
+.navbar{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    margin: 35px auto;
+}
+
+.logo img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+    top: 8%;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.navbar ul{
+    flex: 1;
+    text-align: right;
+    padding-right: 30px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.navbar ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.navbar ul li a::after{
+    content: '';
+    width: 0;
+    height: 5px;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.navbar ul li a:hover:after{
+    width: 100%;
+}
+.fas{
+    color: white;
+    font-family: sans-serif;
+}
+    </style>
+</head>
+<body>
+    <section class="header">
+    <div class="slider1">
+        <img src="/static/cat.png" alt="">
+        <div class="slideshow-text-one">
+            <h4>VELIFEM</h4>
+            <span></span>
+            <p>The NGO for Stray Animals</p>
+        </div>
+    </div>
+    <div class="slider2">
+        <img src="/static/dog.png" alt="">
+        <div class="slideshow-text-two">
+            <h4>The Voice</h4>
+            <span></span>
+            <p>of livings, who can't communicate with us.</p>
+        </div>
+    </div>
+    <div class="slider3">
+        <img src="/static/straycat.png" alt="">
+        <div class="slideshow-text-three">
+            <h4>Spreading Happiness</h4>
+            <span></span>
+            <p>amongst those who can't ask for anything.</p>
+        </div>
+    </div>
+    <div class="slider4">
+        <img src="/static/straydog.png" alt="">
+        <div class="slideshow-text-four">
+            <h4>Helping</h4>
+            <span></span>
+            <p>the ones who can't help themselves.</p>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="navbar">
+            <div class="logo"> 
+               <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png" alt=""></a>
+            </div>
+
+            <ul>
+               <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;&nbsp;Home</a></i></li> </b>
+               <b> <li><a href="/templates/NGOissuespage"> <i class="fas fa-exclamation-triangle"> &nbsp;&nbsp;Issues</a></i></li> </b>
+               <b>  <li><a href="/templates/NGODonatepage"> <i class="fas fa-donate">&nbsp;&nbsp; Donate</a></i></li> </b>
+               <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp; Adopt a Pet</a></i></li> </b>
+               <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+               <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp; About Us</a></i></li> </b>
+               <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp; Contact</a></i></li> </b>
+               <b> <!--<li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li>--> </b>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

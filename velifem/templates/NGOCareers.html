@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers</title>
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), transparent), url(/static/3.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.careers{
+    width: 15%;
+    margin: auto;
+    text-align: center;
+    padding-top: 75px;
+}
+h2{
+    font-size: 60px;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.486);
+    color: white;
+}
+.wrh{
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 3%;
+}
+.wrh h3{
+    font-size: 42px;    
+    font-weight: 650;
+    text-align: center;
+}
+.wrh span{
+    background: black;
+    height: 3px;
+    width: 20%;
+    position: absolute;
+    left: 40.4%;
+}
+.ftj , .ptj , .i{
+    font-size: 38px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+.job1 img{
+    border-radius: 50%;
+    padding: 20px;
+    width: 220px;
+}
+.job1 p{
+    display: none;
+    font-size: 20px;
+    color: black;   
+}
+.job1 img:hover{
+    border-radius: 15%;
+    transition: 1.5s;
+}
+.text01{
+    text-align: center;
+    font-size: 24px;   
+    padding-top: 75px;
+}
+.job1{
+  background: pink;
+  display: flex;
+  width: 450px;
+  height: 200px;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.active, .job1:hover {
+  background-color: #555;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  font-size: 20px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  text-align: justify;
+   width: 450px;
+  height: 80px;
+  margin-bottom: 5%;
+}
+.content2 {
+    padding: 0 18px;
+    display: none;
+    font-size: 20px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: justify;
+     width: 450px;
+    height: 160px;
+    margin-bottom: 5%;
+}
+.content3{
+    padding: 0 18px;
+    display: none;
+    font-size: 20px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: justify;
+     width: 450px;
+    height: 100px;
+    margin-bottom: 5%;
+  }
+  .content4{
+    padding: 0 18px;
+    display: none;
+    font-size: 20px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: justify;
+     width: 450px;
+    height: 80px;
+    margin-bottom: 5%;
+  }
+  .content5{
+    padding: 0 18px;
+    display: none;
+    font-size: 20px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: justify;
+     width: 450px;
+    height: 50px;
+    margin-bottom: 5%;
+  }
+.text01:hover{
+    color: pink;
+}
+.finaltext h2{
+    font-size: 22px;
+    color: #000;
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.finaltext h2 a{
+    text-decoration: none;
+}
+.finaltext a{
+    text-decoration: none;
+    color: black;
+}
+.finaltext a:hover{
+    color: navy;
+    text-decoration: underline;
+}
+footer{
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #707070, #333333);
+    color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    width: 225px;
+} 
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col p{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.col h3{
+    width: fit-content;
+    position: relative;
+    font-size: 24px;
+}
+.col2{
+    flex-basis: 25%;
+    padding-top: 62px;
+}
+.col2 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col2 ul{
+    list-style: none;
+}
+.col2 ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+.col2 ul li a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+.col2 h5{
+    font-size: 20px;
+}
+.col3{
+    flex-basis: 25%;
+    padding-top: 62px;
+
+}
+.col3 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col3 h5{
+    font-size: 20px;
+}
+.col3 a{
+    text-decoration: none;
+    color: white;
+}
+.col3 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    border-radius: 50%;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 800px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(73, 73, 73) url(/static/up2white.png);
+    border-radius: 50%;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrolltop.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}
+    </style>
+</head>
+<body>
+    <div class="scrolltop" onclick ="scrollToTop();">
+    </div>
+    <section class="header">
+        <nav>
+            <div class="background">
+            <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png"> </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;&nbsp;Home</a></i></li> </b>
+                <b> <li><a href="/templates/NGOissuespage"><i class="fas fa-exclamation-triangle">&nbsp;&nbsp;Issues</a></i></li> </b>
+                <b>  <li><a href="/templates/NGODonatepage"><i class="fas fa-donate">&nbsp;&nbsp;Donate</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp;Adopt a Pet</a></i></li> </b>
+                <b> <li><a href="/templates/SOS"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp;About Us</a></i></li> </b>
+                <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp;Contact</a></i></li> </b>
+                <b><!-- <li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li>--> </b>
+            </div>
+        </nav> 
+        <section class="careers">
+            <h2>Careers</h2>
+            <span></span>
+        </section>
+        </section>
+        <section class="wrh">
+            <h3>We are Hiring</h3>
+            <span></span>
+        </section>
+        <br>
+        <div class="ftj">Full Time Jobs</div>
+        <br>
+        <center>
+            <button type="button" class="job1">
+                <img src="/static/investigator.png">
+                <div class="text01"> <b> Investigator </b> </div> <br> <br>
+            </button>
+            <div class="content2">
+              <p>
+                Looking for someone to prepare factsheets on various animal protection issues,
+                conduct research as requested to help advance The Velifem's campaigns,
+                conduct assigned short- and long-term investigations – including undercover investigations – 
+                from beginning to end, including the following duties.
+              </p>
+            </div>
+            <br><br><br>
+        </center>
+        <center>
+            <button type="button" class="job1">
+                <img src="/static/doctors.jpg">
+                <div class="text01"> <b> Veterinarian (Vet) </b> </div> <br> <br>
+            </button>
+            <div class="content">
+              <p>Looking with a Veterinarian with an experience of atleast 1 year 
+                 with BVSc and should have knowledge about the work.
+              </p>
+            </div>
+            <br><br><br>
+        </center>
+                <center>
+                <button type="button" class="job1">
+                    <img src="/static/staff.png">
+                    <div class="text01"> <b> Staff Writer </b> </div> <br> <br>
+                </button>
+                <div class="content3">
+                  <p>Looking for someone to create content uniquely designed for specific The Velifem projects and campaigns
+                    Formulate and produce unique projects, campaigns, and slogans.</p>
+                </div>
+                <br><br><br>
+            </center>
+            <br>
+        <div class="ptj">Part Time Jobs</div>
+        <br>
+        <center>
+            <button type="button" class="job1">
+                <img src="/static/fund.png">
+                <div class="text01"> <b> Fundraiser </b> </div> <br> <br>
+            </button>
+            <div class="content3">
+              <p>
+                Looking for someone to research prospective donors,
+                create a strong fundraising message that appeals to potential donors and
+                identify and contact potential donors.
+              </p>
+            </div>
+            <br><br><br>
+        </center>
+        <center>
+            <button type="button" class="job1">
+                <img src="/static/market.png">
+                <div class="text01"> <b> Marketing </b> </div> <br> <br>
+            </button>
+            <div class="content">
+              <p> Looking for someone to generate leads for our events, 
+                 promote programs through social media and
+                 promote the website and Instagram page.
+              </p>
+            </div>
+            <br><br><br>
+        </center>
+                <center>
+                <button type="button" class="job1">
+                    <img src="/static/web.png">
+                    <div class="text01"> <b> Web Development </b> </div> <br> <br>
+                </button>
+                <div class="content4">
+                  <p>Looking for someone to work on improving the website and adding new features.</p>
+                </div>
+                <br><br><br>
+            </center>
+            <br>
+        <div class="i">Internships</div>
+        <br>
+        <center>
+            <button type="button" class="job1">
+                <img src="/static/event.png">
+                <div class="text01"> <b> Event Management </b> </div> <br> <br>
+            </button>
+            <div class="content3">
+              <p>
+                Looking for someone to manage marketing, partnerships, and execution of the events and
+                manage the execution of the events with budgetary constraints.
+              </p>
+            </div>
+            <br><br><br>
+        </center>
+        <center>
+            <button type="button" class="job1">
+                <img src="/static/graphic.png">
+                <div class="text01"> <b> Graphic Design </b> </div> <br> <br>
+            </button>
+            <div class="content">
+              <p>Looking for someone to work on poster design and
+                 manage the invitation design.
+              </p>
+            </div>
+            <br><br><br>
+        </center>
+                <center>
+                <button type="button" class="job1">
+                    <img src="/static/team.png">
+                    <div class="text01"> <b> Team Management </b> </div> <br> <br>
+                </button>
+                <div class="content5">
+                  <p>Looking for someone to manage a team of campus representative of colleges.</p>
+                </div>
+                <br>
+            </center>
+            <br> <br>
+            <center>
+            <section class="finaltext">
+                <h2>To apply for any of the Full Time, Part Time or Internships,
+                    Kindly write us to <a href="mailto: jobs.thevelifem@gmail.com">jobs.thevelifem@gmail.com</a> with your experience(s), portfolio(s)
+                    and degree(s) attached.
+                </h2>
+            </div>
+        </center>
+                <script>
+                    var coll = document.getElementsByClassName("job1");
+                    var i;
+                    
+                    for (i = 0; i < coll.length; i++) {
+                      coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                          content.style.display = "none";
+                        } else {
+                          content.style.display = "block";
+                        }
+                      });
+                    }
+                    </script>
+                    <section id="footererer">
+                        <footer>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="/static/Logo2white.png" class="logo">
+                                    <p>The VELIFEM is an NGO for stray animals
+                                       to provide them with all the necesary
+                                       health care and attention they deserve.
+                                    </p>
+                                    <br> <br>
+                                    <h3>Donate</h3><br>
+                                    <p>We rely on you to donate in order<br>
+                                       to rescue, feed and provide<br>
+                                       necessary care and to keep fighting<br>
+                                       for the animals.
+                                    </p>
+                                </div>
+                                <div class="col2">
+                                    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful Links</h3> <br>
+                                    <p> 
+                                        <ul>
+                                            <li><a href="/templates/NGOAboutus">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What We Do</a></li><br>
+                                <li><a href="/templates/NGOCareers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Careers</a></li><br>
+                                <li><a href="/templates/NGOFund">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fundraising</a></li><br>
+                                <li><a href="/templates/NGOVolunteer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Become a Volunteer</a></li><br>
+                                <li><a href="https://www.privacypolicygenerator.info/live.php?token=ggggxz4rBWLJRqrFm3QkyOhojH4PXDRn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a></li><br>
+                                <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=clAqjo4wjhWmYAP3BfeQJj2LZTXXGhxR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms and Conditions</a></li><br>
+                                        </ul>
+                                    </p>
+                                </div>
+                                <div class="col3">
+                                    <h3>Contact Us</h3><br>
+                                    <p>
+                                       <h5> Email </h5> <br>
+                                       For Queries - <br> 
+                                       <a href="mailto: queries.thevelifemngo@gmail.com">  queries.thevelifemngo@gmail.com <br> <br></a>
+                                       For Registering a Complaint - <br>  
+                                       <a href="mailto: fac.thevelifemngo@gmail.com"> fac.thevelifemngo@gmail.com <br></a> 
+                                       <br>
+                                       <h5> Call Us </h5> <br>
+                                       Surat - 12345xxxx <br>
+                                       Mumbai - 99875xxxx <br>
+                                       Delhi - 84523xxxx <br>
+                                    </p>
+                                </div>
+                                <div class="col2">
+                                    <h3>Headquarters</h3><br>
+                                    <p> 
+                                        Bunglow Number xx, XYZ Society,<br>
+                                        Near ABC Row House, EFG Marg,<br>
+                                        Adajan, Surat - 395xxx.
+                                    </p>
+                                    <p> 
+                                        Bunglow Number xx, XYZ Society,<br>
+                                        Near ABC Row House, EFG Marg,<br>
+                                        Bhayender, Mumbai - 400xxx.
+                                    </p>
+                                    <p> 
+                                        Bunglow Number xx, XYZ Society,<br>
+                                        Near ABC Row House, EFG Marg,<br>
+                                        Karol Bagh, Delhi - 110xxx.
+                                    </p>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                    <script type="text/javascript">
+                        window.addEventListener("scroll", function(){
+                            var scroll = document.querySelector('.scrolltop');
+                            scroll.classList.toggle("active" , window.scrollY > 500)
+                        })
+                        function scrollToTop(){
+                            window.scrollTo({
+                                top: 0
+                            })
+                        }
+                    </script>
+            </body>
+            </html> 

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption Form</title>
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), transparent), url(/static/dog.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.adopt{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    padding-top: 75px;
+}
+.adopt h2{
+    font-size: 60px;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.212);
+    color: white;
+}
+.adopttext{
+    width: 42%;
+    margin: auto;
+    text-align: center;
+}
+.adopttext p{
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.411);
+}
+fieldset{
+    width: 60%;
+    margin: 5% auto;
+    align-content: center;
+}
+.donationtext p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.411);
+}
+#adoptionorm .form{
+    top: 180px;
+    padding: 10px;
+    align-items: center;
+}
+#adoptionform h2{
+    text-align: center;
+    align-content: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+    padding-top: 10px;
+}
+#adoptionform .name{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform .email{
+    width: 45%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform .email2{
+    width: 45%;
+    display: none;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;}
+#adoptionform .address{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform #myNumtwo{
+    width: 45%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform #myNum{
+    width: 10%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 14px;
+}
+.texttwo{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+#adoptionform .others{
+    width: 40%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+.purpose, .type, .currency:required:invalid{
+    color: rgb(102, 102, 102);
+}
+option[value=""][disabled]{
+    display: none;
+}
+option{
+    color: black;
+}
+#adoptionform .purpose, .type{
+    width: 15%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform .income{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform .paymentmethod{
+    width: 40%;
+    padding: 20px, 10px; 
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+    font-size: 22px;
+    margin-left: 17%;
+}
+#adoptionform .amount{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+#adoptionform .currency{
+    width: 20%;
+    padding: 20px, 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+}
+textarea{
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+    height: 10vh;
+    font-size: 18px;
+    font-family: sans-serif;
+    padding: 10px;
+    resize: none;
+}
+.textthree{
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 30px;
+}
+.adopt-btn{
+    width: 10%;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    background: linear-gradient(to right, #e58c8a, #eec0c6);
+    color: white;
+    margin: auto;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.adopt-btn a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}    
+footer{
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #707070, #333333);
+    color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    width: 225px;
+} 
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col p{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.col h3{
+    width: fit-content;
+    position: relative;
+    font-size: 24px;
+}
+.col2{
+    flex-basis: 25%;
+    padding-top: 62px;
+}
+.col2 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col2 ul{
+    list-style: none;
+}
+.col2 ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+.col2 ul li a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+.col2 h5{
+    font-size: 20px;
+}
+.col3{
+    flex-basis: 25%;
+    padding-top: 62px;
+
+}
+.col3 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col3 a{
+    text-decoration: none;
+    color: white;
+}
+.col3 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.col3 h5{
+    font-size: 20px;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    border-radius: 50%;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 800px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(73, 73, 73) url(/static/up2white.png);
+    border-radius: 50%;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrolltop.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}
+    </style>
+</head>
+<body>
+    <div class="scrolltop" onclick ="scrollToTop();">
+    </div>
+    <section class="header">
+        <nav>
+            <div class="background">
+            <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png"> </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;Home</a></i></li> </b>
+                <b> <li><a href="/templates/NGOissuespage"><i class="fas fa-exclamation-triangle">&nbsp;&nbsp;Issues</a></i></li> </b>
+                <b>  <li><a href="/templates/NGODonatepage"><i class="fas fa-donate">&nbsp;&nbsp;Donate</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp;Adopt a Pet</a></i></li> </b>
+                <b> <li><a href="/templates/SOS"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp;About Us</a></i></li> </b>
+                <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp;Contact</a></i></li> </b>
+                <b> <!--<li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li>--> </b>
+            </div>
+        </nav> 
+        <section class="adopt">
+            <h2>Adoption Form</h2>
+            <span></span>
+            </section>
+            <section class="adopttext">
+                <br><br><br>
+            <p>Your new <b>Furry Friend</b> is waiting for you!</p>
+        </section>
+        </section>
+        <section id="adoptionform">
+            <fieldset>
+                    <h2>Adoption Form</h2> <br><br>
+                    <span></span>
+        <center>
+            <form method="post" action=" " enctype="multipart/form-data">
+                {% csrf_token %}
+                <br><br><input type="email" class="email2" name="email" placeholder="Email ID">
+                <p><input  pattern="[A-Za-z]+"  name="first_name" class = "name" placeholder = "First Name" required>
+                &nbsp;&nbsp;&nbsp;
+                <input class="name" pattern="[A-Za-z]+"  name="last_name" placeholder="Last Name" required></p>
+                <p><br><br><input type="email" name="email" class="email" placeholder="Email ID" required></p>
+                <p><br><br><input class="address" pattern="[A-Za-z]+"  name="country" placeholder="Country" required>
+                    &nbsp;&nbsp;&nbsp;
+                <input class="address" pattern="[A-Za-z]+"  name="state" placeholder="State" required>
+                &nbsp;&nbsp;&nbsp;
+                <input class="address" pattern="[A-Za-z]+"  name="city" placeholder="City" required></p>
+                <p><br><br> <input type="text" name="contact_number" pattern="[789][0-9]{9}" id="myNumtwo" placeholder="Contact Number" maxlength="10" required></p>
+                    <br>
+                    <!--<p><br> <div class="texttwo"> Type - &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        <select class="purpose" name="animal_type" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">Dog</option>
+                        <option value="2">Cat</option>
+                        <option value="3">Bird</option>
+                        <option value="4">Hamster</option>
+                        <option value="5">Fish</option>
+                    </select>
+                    <br> <br>
+                    <p><div class="texttwo"> Breed - &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        <select class="type" name="breed" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">Golden Retreiver</option>
+                        <option value="2">Labrador</option>
+                        <option value="3">Shih Tzu</option>
+                        <option value="4">Indian Periah</option>
+                        <option value="5">Siberian Husky</option>
+                        <option value="6">British Shorthair</option>
+                        <option value="7">Persian Cat</option>
+                        <option value="8">Maine Coon</option>
+                        <option value="9">Scotish Fold</option>
+                        <option value="10">Siamese Cat</option>
+                        <option value="11">Syrian Hamster</option>
+                        <option value="12">Chinese Hamster</option>
+                        <option value="13">Budgerigar</option>
+                        <option value="14">Cockatiel</option>
+                        <option value="15">Black Moor</option>
+                        <option value="16">Golden Fish</option>
+                    </select></p>
+                    <br>
+                    <p><div class="texttwo"> Anuual Income &nbsp;&nbsp;&nbsp; </div>
+                        <br>
+                        <select class="income" name="annual_income" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">0 - 300,000</option>
+                        <option value="2">300,000 - 500,000</option>
+                        <option value="3">500,000 - 700,000</option>
+                        <option value="4">700,000 - 900,000</option>
+                        <option value="5">900,000 - 1,100,000</option>
+                        <option value="6">> 1,100,000</option>
+                    </select></p>-->
+                </center>
+                    <br>
+                    <p>
+                        <div class="textthree">Permanent Address</div> <br>
+                        <textarea id="comments" name="permanent_address" placeholder="Your current permanent address." rows="4" cols="40" name="comments"></textarea>
+                    </p>
+                    <p>
+                        <div class="textthree">Notes (if any)</div> <br>
+                        <textarea id="comments" name="notes" placeholder="Please write additional comments here (if any)." rows="4" cols="40" name="comments"></textarea>
+                    </p>
+                    <p>
+                        <div class="textthree">Our representative will visit you for verfification and further guidance.</div> <br>
+                    </p>
+            <center>
+                <br> <input type="submit" name="Adopt" class="adopt-btn" value="ADOPT">
+            </form>
+            </center>
+            </fieldset>
+            </section>
+            <section id="footererer">
+                <footer>
+                    <div class="row">
+                        <div class="col">
+                            <img src="/static/Logo2white.png" class="logo">
+                            <p>The VELIFEM is an NGO for stray animals
+                               to provide them with all the necesary
+                               health care and attention they deserve.
+                            </p>
+                            <br> <br>
+                            <h3>Donate</h3><br>
+                            <p>We rely on you to donate in order<br>
+                               to rescue, feed and provide<br>
+                               necessary care and to keep fighting<br>
+                               for the animals.
+                            </p>
+                        </div>
+                        <div class="col2">
+                            <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful Links</h3> <br>
+                            <p> 
+                                <ul>
+                                    <li><a href="/templates/NGOAboutus">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What We Do</a></li><br>
+                                <li><a href="/templates/NGOCareers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Careers</a></li><br>
+                                <li><a href="/templates/NGOFund">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fundraising</a></li><br>
+                                <li><a href="/templates/NGOVolunteer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Become a Volunteer</a></li><br>
+                                <li><a href="https://www.privacypolicygenerator.info/live.php?token=ggggxz4rBWLJRqrFm3QkyOhojH4PXDRn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a></li><br>
+                                <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=clAqjo4wjhWmYAP3BfeQJj2LZTXXGhxR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms and Conditions</a></li><br>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col3">
+                            <h3>Contact Us</h3><br>
+                            <p>
+                               <h5> Email </h5> <br>
+                               For Queries - <br> 
+                               <a href="mailto: queries.thevelifemngo@gmail.com">  queries.thevelifemngo@gmail.com <br> <br></a>
+                                 For Registering a Complaint - <br>  
+                                 <a href="mailto: fac.thevelifemngo@gmail.com"> fac.thevelifemngo@gmail.com <br></a> 
+                               <br>
+                               <h5> Call Us </h5> <br>
+                               Surat - 12345xxxx <br>
+                               Mumbai - 99875xxxx <br>
+                               Delhi - 84523xxxx <br>
+                            </p>
+                        </div>
+                        <div class="col2">
+                            <h3>Headquarters</h3><br>
+                            <p> 
+                                Bunglow Number xx, XYZ Society,<br>
+                                Near ABC Row House, EFG Marg,<br>
+                                Adajan, Surat - 395xxx.
+                            </p>
+                            <p> 
+                                Bunglow Number xx, XYZ Society,<br>
+                                Near ABC Row House, EFG Marg,<br>
+                                Bhayender, Mumbai - 400xxx.
+                            </p>
+                            <p> 
+                                Bunglow Number xx, XYZ Society,<br>
+                                Near ABC Row House, EFG Marg,<br>
+                                Karol Bagh, Delhi - 110xxx.
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+            <script type="text/javascript">
+                window.addEventListener("scroll", function(){
+                    var scroll = document.querySelector('.scrolltop');
+                    scroll.classList.toggle("active" , window.scrollY > 500)
+                })
+                function scrollToTop(){
+                    window.scrollTo({
+                        top: 0
+                    })
+                }
+            </script>
+    </body>
+    </html> 

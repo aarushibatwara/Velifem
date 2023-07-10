@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+.header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: none;
+    background-color: rgb(214, 214, 214);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.donate{
+    width: 20%;
+    text-align: center;
+    padding-top: 20px;
+}
+.donationtext{
+    width: 63%;
+    margin: auto;
+    text-align: center;
+    padding-top: 0px;
+    animation-name: donationtext;
+    animation-duration: 5s;
+}
+.donationtext p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.411);
+}
+.thank , .you{
+    margin: 2%;
+    padding-top: 10px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: flex;
+    word-spacing: 5px;
+    letter-spacing: 50px;
+    font-size: 50px;
+    font-weight: 600;
+}
+.h , .n , .o{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding-top: 15px;
+    padding-left: 28px;
+    background: none;
+    border: 5px solid #000;
+    color: #000;
+    text-align: center;
+    animation-name: thankyou;
+    animation-duration: 2.5s;
+}
+.t , .a , .k , .y , .u{
+    border-radius: 0;
+    width: 100px;
+    height: 100px;
+    padding-top: 15px;
+    padding-left: 28px;
+    background: none;
+    border: 5px solid #000;
+    color: #000;
+    text-align: center;
+    animation-name: thankyou;
+    animation-duration: 2.5s;
+}
+.rtoh{
+    animation-name: rtoh;
+    animation-duration: 100s;
+}
+.rtoh-btn{
+    width: 15%;
+    padding: 10px;
+    cursor: pointer;
+    background: linear-gradient(to right, #09203fbb, #537895b7);
+    color: white;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+}
+.rtoh-btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}    
+@keyframes thankyou{
+    0%{
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+    40%{
+        width: 40px;
+        height: 40px;
+        visibility: hidden;
+    }
+    100%{
+        width: 100px;
+        height: 100px;  
+        visibility: visible;
+    }
+
+}
+@keyframes donationtext{
+    0%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: hidden;
+    }
+    51%{
+        padding-top: 200px;
+        visibility: visible;
+    }
+    100%{
+        padding-top: 0px;
+        visibility: visible;
+    }
+}
+@keyframes rtoh{
+    0%{
+        visibility: hidden;
+    }
+    5%{
+        visibility: hidden;
+    }
+    5.5%{
+        opacity: 0;
+        visibility: visible;
+    }
+    7.5%{
+        opacity: 1;
+        visibility: visible;
+    }
+}

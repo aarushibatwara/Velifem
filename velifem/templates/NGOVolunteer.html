@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteering</title>
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("/static/clock.png");
+    background-color: rgba(95, 95, 95, 0.747);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.textijtext{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 400px;
+    padding-bottom: 50px;
+}
+.textijtext h3{
+    font-size: 60px;
+    text-align: center;
+    font-weight: 680;
+}
+.textijtext h5{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 5000;
+}
+    </style>
+</head>
+<body>
+    <div class="scrolltop" onclick ="scrollToTop();">
+    </div>
+    <section class="header">
+        <nav>
+            <div class="background">
+            <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png"> </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;Home</a></i></li> </b>
+                <b> <li><a href="/templates/NGOissuespage"><i class="fas fa-exclamation-triangle">&nbsp;&nbsp;Issues</a></i></li> </b>
+                <b>  <li><a href="/templates/NGODonatepage"><i class="fas fa-donate">&nbsp;&nbsp;Donate</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp;Adopt a Pet</a></i></li> </b>
+                <b> <li><a href="/templates/SOS"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp;About Us</a></i></li> </b>
+                <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp;Contact</a></i></li> </b>
+                <b> <!--<li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li>--> </b>
+            </div>
+        </nav>
+        <section class="textijtext">
+            <h3>We will be Back!</h3>
+            <h5>We are down at the moment for maintainance purposes.
+                <br> We will be right back with you.
+                <br> We apologize for the inconvenience caused and we appreciate your patience.
+            </h5>
+        </section>
+        </section>
+        </body>
+        </html>

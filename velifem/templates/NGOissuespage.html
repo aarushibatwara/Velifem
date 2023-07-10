@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues</title>
+    <link rel="shortcut icon" type="image/png" href="/static/faviconwhite.png">
+    <script src="https://kit.fontawesome.com/c311c70baa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.header{
+    width: 100%;
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), transparent), url(/static/cat.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.background{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+nav{
+    display: flex;
+    padding: 3.7% 1.5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+    cursor: pointer;
+    left: 10%;
+}
+.nav-links{
+    flex: 2;
+    text-align: right;
+}
+.nav-links ul{
+    flex: 2;
+    text-align: right;
+    padding-right: 15px; 
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.nav-links ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-links ul li a:hover:after{
+    width: 100%;
+}
+.issues{
+    width: 15%;
+    margin: auto;
+    text-align: center;
+    padding-top: 75px;
+}
+h2{
+    font-size: 60px;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.212);
+    color: white;
+}
+.navigation{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 2.5%;
+}
+.nav-links-two{
+    flex: 1;
+    text-align: center;
+}
+.nav-links-two ul{
+    flex: 1;
+    text-align: center;
+    font-size: 100%;
+    font-family: sans-serif;
+
+}
+.nav-links-two ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 2%;
+}
+.nav-links-two ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.nav-links-two ul li a::after{
+    content: '';
+    width: 0;
+    height: 5px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #bebebe, #d2d2d2);
+    border-radius: 3px, 3px;
+    transition: width 0.25s;
+}
+.nav-links-two ul li a:hover:after{
+    width: 75%;
+}
+.fas{
+    color: white;
+    font-family: sans-serif;
+}
+#pca-act{
+    text-align: center;
+    justify-content: center;
+}
+#pca-act h2{
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    background: none;
+    color: black;  
+    margin-top: 3%;
+    letter-spacing: 2.5px;
+}
+#pca-act h5{
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 32px;
+    margin-top: 0.7%;
+    letter-spacing: 2px;
+}
+#pca-act span{
+    background: black;
+    height: 3px;
+    width: 39%;
+    position: absolute;
+    left: 30.4%;
+
+}
+#pca-act p{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    flex: 1;
+    font-size: 26px;
+    font-weight: 150;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+#rules-pca-act{
+    text-align: center;
+    justify-content: center;
+}
+#rules-pca-act h2{
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    background: none;
+    color: black;  
+    margin-top: 3%;
+    letter-spacing: 2.5px;
+}
+#rules-pca-act h5{
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 32px;
+    margin-top: 0.7%;
+    letter-spacing: 2px;
+}
+#pca-act h4{
+    text-align: center;
+    font-size: 20px;
+}
+#rules-pca-act span{
+    background: black;
+    height: 3px;
+    width: 56%;
+    position: absolute;
+    left: 22%;
+}
+#rules-pca-act p{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    flex: 1;
+    font-size: 22px;
+    font-weight: 150;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+#rules-pca-act h6{
+    font-size: 26px;
+    text-align: left;
+    margin-left: 4%;
+}
+#rules-pca-act h4{
+    text-align: center;
+    font-size: 20px;
+}
+#abc h2{
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    background: none;
+    color: black;  
+    margin-top: 3%;
+    letter-spacing: 2.5px;
+}
+#abc span{
+    background: black;
+    height: 3px;
+    width: 40%;
+    position: absolute;
+    left: 29.7%;
+}
+#abc p{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    flex: 1;
+    font-size: 22px;
+    font-weight: 150;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+#centers h2{
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    background: none;
+    color: black;  
+    margin-top: 3%;
+    letter-spacing: 2.5px;
+}
+#centers span{
+    background: black;
+    height: 3px;
+    width: 11.25%;
+    position: absolute;
+    left: 44.37%;
+}
+#centers p{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    flex: 1;
+    font-size: 22px;
+    font-weight: 150;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+#centers h6{
+    font-size: 26px;
+    text-align: left;
+    text-align: center;
+}
+#useful-links h2{
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    background: none;
+    color: black;  
+    margin-top: 3%;
+    letter-spacing: 2.5px;
+}
+#useful-links span{
+    background: black;
+    height: 3px;
+    width: 17.3%;
+    position: absolute;
+    left: 41.3%;
+}
+.usefullinksabc{
+    text-align: center;
+}
+.usefullinksabc ul{
+    text-align: justify;
+    font-size: 100%;
+    font-family: sans-serif;
+    font-weight: 200;
+}
+.usefullinksabc ul li{
+    margin-top: 2%;
+    margin-left: 40%;
+    list-style: none;
+}
+.usefullinksabc ul li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    position: relative;
+}
+footer{
+    margin-top: 5%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #707070, #333333);
+    color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    width: 225px;
+} 
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col p{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.col h3{
+    width: fit-content;
+    position: relative;
+    font-size: 24px;
+}
+.col2{
+    flex-basis: 25%;
+    padding-top: 62px;
+}
+.col2 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col2 ul{
+    list-style: none;
+}
+.col2 ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+.col2 ul li a:hover{
+    color: rgba(0, 0, 0, 0.582);
+}
+.col2 h5{
+    font-size: 20px;
+}
+.col3{
+    flex-basis: 25%;
+    padding-top: 62px;
+
+}
+.col3 h3{
+    width: fit-content;
+    margin-bottom: 42px;
+    position: relative;
+    font-size: 24px;
+}
+.col3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.col3 h5{
+    font-size: 20px;
+}
+.col3 a{
+    text-decoration: none;
+    color: white;
+}
+.col3 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    border-radius: 50%;
+}
+.scrolltop{
+    position: fixed;
+    bottom: 800px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(73, 73, 73) url(/static/up2white.png);
+    border-radius: 50%;
+    background-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrolltop.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+}
+    </style>
+</head>
+<body>
+    <div class="scrolltop" onclick ="scrollToTop();">
+    </div>
+    <section class="header">
+        <nav>
+            <div class="background">
+            <a href="/templates/NGO1stpage"><img src="/static/Logo2white.png"> </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                <b> <li><a href="/templates/NGO1stpage"><i class="fas fa-home"> &nbsp;&nbsp;Home</a></i></li> </b>
+                <b> <li><a href="/templates/NGOissuespage"><i class="fas fa-exclamation-triangle">&nbsp;&nbsp;Issues</a></i></li> </b>
+                <b>  <li><a href="/templates/NGODonatepage"><i class="fas fa-donate">&nbsp;&nbsp;Donate</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-paw">&nbsp;&nbsp;Adopt a Pet</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAdoptpage"><i class="fas fa-solid fa-bell">&nbsp;&nbsp; SOS</a></i></li> </b>
+                <b> <li><a href="/templates/NGOAboutus"><i class="fas fa-info">&nbsp;&nbsp;About Us</a></i></li> </b>
+                <b> <li><a href="/templates/NGOContactus"><i class="fas fa-phone-alt">&nbsp;&nbsp;Contact</a></i></li> </b>
+                <b> <!--<li><a href="/templates/loginregisterform"><i class="fas fa-user">&nbsp;&nbsp; Account</i></a></li> --></b>
+            </div>
+        </nav> 
+          
+        <section class="issues">
+            <h2>ISSUES</h2>
+            <span></span>
+        </section>
+        <section class="navigation">
+            <span></span>
+            <div class="nav-links-two">
+                <ul>
+                <b> <li><a href="#pca-act">PCA Act</a></li> </b>
+                <b> <li><a href="#rules-pca-act">Rules of PCA Act</a></li> </b>
+                <b> <li><a href="#abc">Animal Birth Control (ABC)</a></li> </b>
+                <b>  <li><a href="#centers">Centers</a></li> </b>
+                <b> <li><a href="#useful-links">Useful Links</a></li> </b>
+                </ul>
+            </div>
+        </section>
+        </section>
+
+        <section id="pca-act">
+            <h2>PCA Act</h2>
+            <h5>Prevention of Cruelty to Animals Act</h5>
+            <span></span>
+            <p>The Prevention of Cruelty to Animals Act, 1960, authored by acclaimed dancer and animal lover, 
+                Rukmini Devi Arundale, is an Act of the Parliament of India enacted in 1960 
+                to prevent the infliction of unnecessary pain or suffering on animals and to amend the laws 
+                relating to the prevention of cruelty to animals. As per the provisions of the law the 
+                government of India formed the Animal Welfare Board of India.<br>
+                <br>It shall come into force on such date as the Central Government may, by notification in the
+                    official Gazette, appoint, and different dates may be appointed for different States and for the
+                    different provisions comained in this Act.<br>
+                <br>   <b>  Definitions : </b> In this Act, unless the context otherwise. requires<br>
+                <br>    (a) "Animal" means any living creature other than a human being,<br>
+                <br>    (b) "Board" means the Board established under Section 4. and as reconstituted from time
+                        to time under Section 5A<br>
+                <br>    (c) "Captive Animal" means any animal (not being a domestic animal) which is in capacity or
+                        confinement, whether permanent or temporary, or which is subjected to any appliance of
+                        contrivance for the purpose of hindering or preventing its escape from captivity or
+                        confinement or which is pinioned or which is or appears to be. maimed;<br>
+                <br>    d) "Domestic Animal" means any animal which is tamed or which has been or is
+                        being sufficiently tamed to serve some purpose for the use of man or which,
+                        although it neither has been nor is intended to be so tamed, is or has become in
+                        fact wholly or partly tamed.</p>
+                        <br><h4>To read the complete document on Prevention of Cruelity to Animals 
+                            <a href="https://www.indiacode.nic.in/bitstream/123456789/11237/1/the_prevention_of_cruelty_to_animals_act%2C_1960.pdf">Click Here</a></h4>
+        </section>
+
+        <section id="rules-pca-act">
+            <h2>Rules of PCA Act</h2>
+            <h5>Rules Under the Prevention of Cruelity to Animals Act</h5>
+            <span></span>
+            <p>
+                <h6>Rule 1</h6>
+                <p>
+                01. The Prevention of Cruelty to Draught and Pack Animals Rules, 1965<br>
+                02. Short title and commencement<br>
+                03. Definitions<br>
+                04. Maximum loads for draught animals<br>
+                05. Maximum load for certain pack animals<br>
+                06. Maximum number of passengers for animal drawn vehicles<br>
+                07. General Conditions for use of draught and pack animals<br>
+                08. Animals to be disengaged after work<br>
+                09. Use of Spiked bits prohibited<br>
+                10. Saddling of horses<br>
+                11. Certificates regarding unladen weight of vehicles, etc.<br>
+                12. Powers of police officers and other authorized persons<br>
+                13. Application of rules where local bye-laws etc. exist<br></p>
+                <br><h6>Rule 2.</h6>
+                <p>
+                01. The Prevention of Cruelty to Animals(Licensing of Farriers) Rules, 1965.<br>
+                02. Short Title and commencement<br>
+                03. Definition<br>
+                04. Farriers to be licensed<br>
+                05. Persons entitled to apply for license<br>
+                06. Application for license<br>
+                07. Grant of License<br>
+                08. Term of license and renewal thereof<br>
+                09. Issue of duplicate license<br>
+                10. Farrier to exercise reasonable care and skill<br>
+                11. Cancellation of license<br>
+                12. Issue of fresh license after cancellation<br>
+                13. Fees<br>
+                14. Maintenance of register<br>
+                15. Farrier’s License<br></p>
+                <br><h6>Rule 3.</h6>
+                <p>
+                01. The Performing Animals Rules, 1973.<br>
+                02. Short Title and commencement<br>
+                03. Definitions<br>
+                04. Application for Registration<br>
+                05. Fee and Registration<br>
+                06. Form of Certificate of Registration<br>
+                07. Register<br>
+                08. Inspection of Register<br>
+                09. Application for variation of entries in register<br>
+                10. Issue of duplicate copies of certificates<br>
+                11. Copies of certificates etc. to be sent to the Animal Welfare Board of India<br>
+                12. FIRST SCHEDULE<br>
+                13. SECOND SCHEDULE<br>
+                14. THIRD SCHEDULE<br>
+                15. FOURTH SCHEDULE<br> </p>
+                <br><h6>Rule 4.</h6>
+                <p>
+                01. The Transport of Animals Rules, 1978.<br>
+                02. CHAPTER I<br>
+                03. CHAPTER II<br>
+                04. CHAPTER III<br>
+                05. CHAPTER IV<br>
+                06. CHAPTER V<br>
+                07. CHAPTER VI<br> </p>
+                <br><h6>Rule 5.</h6>
+                <p>
+                01. The Prevention of Cruelty to Animals(Application of Fines) Rules, 1978.<br>
+                02. Short Title<br>
+                03. Definitions<br>
+                04. Fines, after deducting cost of collection, to be made over to board<br>
+                05. Application of fines made over to board<br>
+                06. Principles to govern application of fines<br></p>
+                <br><h6>Rule 6.</h6>
+                <p>
+                01. The Prevention of Cruelty to Animals(Registration of Cattle Premises) Rules, 1978.<br>
+                02. Short Title and application<br>
+                03. Definitions<br>
+                04. Registration of premises<br>
+                05. Application for Registration<br>
+                06. Certificate of Registration <br>
+                07. Inpection of Premises<br>
+                08. Cancellation of registration<br>
+                09. Appeal<br>
+                10. Display of section 12 of the act<br>
+                11. Saving<br></p>
+                <br><h6>Rule 7.</h6>
+                <p>
+                01. The Prevention of Cruelty (Capture of Animals) Rules 1972.<br>
+                02. Short Title and Commencement<br>
+                03. Capture of Birds<br>
+                04. Capture of Other Animals<br></p>
+                <br><h6>Rule 8.</h6>
+                <p>
+                01. Breeding of and Experiments on Animals(Control and Supervision)
+                Amendment Rules,2001<br>
+                02. Performing Animals (Registration) Rules, 2001.<br>
+                03. Prevention of Cruelty to Animals (Transport of Animals on Foot) Rules, 2001<br>
+                04. Transport of Animals (Amendment) Rules, 2001.<br>
+                05. Prevention of Cruelty to Animals (Slaughter House) Rules, 2001.<br>
+                06. Prevention of Cruelty to Animals (Establishment and Regulation of Societies for
+                Prevention of Cruelty to Animals) Rules, 2001.<br></p>
+                <br><h4>To read the complete document on Rules of Prevention of Cruelity to Animals 
+                    <a href="http://www.bluecrossofindia.org/downloads/rules.pdf">Click Here</a></h4>
+        </section>
+
+        <section id="abc">
+            <h2>Animal Birth Control (ABCs)</h2>
+            <span></span>
+            <p> A study of the ABC-AR programme and a comparison with the earlier catch-and-kill procedure conclusively shows the success and feasibility of the
+                former in both the control of the street dog population and the incidence of rabies in dogs and humans.  - Dr. S. Chinny Krishna <br>
+                <br> The bond between humans and dogs began somewhere on the Eurasian continent 1214,000 years ago, where the first mutual relationship was born. 
+                Approaching early human camps and settlements, food scraps are provided, and wolves quickly become frequently welcomed visitors, warning humans 
+                of imminent danger and later hunting wildlife. Helped. This started the domestication of dogs and the creation of a human-animal connection that 
+                is second to none. Today, humans overbreed dogs  and then abandon them in large numbers, breaking this bond, putting danger to the dogs themselves 
+                and putting significant health risks to human society. Too often, authorities facing the problems caused by these dogs turn to mass destruction in 
+                the hope of  a quick solution, but realize that  destruction must continue every year  with no end in sight. increase. In addition, by temporarily 
+                reducing  the number of stray dogs,  authorities have improved the  survival potential of the remaining dogs and created new opportunities for newly 
+                abandoned dogs. It is now recognized that removing extra dogs cannot solve the problem without combining it with other means such as dog registration,
+                contraceptive surgery and  public education. <br>
+                <br>At  certain population densities, birth rates and mortality rates are equal, the population is in equilibrium, and population growth is flat. 
+                This more realistic explanation of population growth is known as logistic growth. The upper limit for population growth to level off is known as 
+                carrying capacity. Each habitat has a specific load-bearing capacity for each species. This particular carrying capacity basically depends on the 
+                availability, distribution, and quality of the resources of each species (shelter, food, water). Population densities of higher vertebrates 
+                (including dogs) are almost always close to carrying capacity. The decrease in population density due to additional mortality is quickly offset 
+                by better breeding and better survival potential. In other words, if the dog is taken away, the life expectancy of the survivor will be longer. 
+                This is because dogs have better access to resources and  less competition for resources.<br>
+                <br>In 1964, frightened by the horrifying method of killing a stray dog ​​by the  Madras Corporation, VELIFEM began investigating the matter. 
+                We were surprised to learn that  Madras Corporation, one of the oldest companies in the world, started a capture and killing program in 1860 at
+                the age of 300. Section 218 of the Madras  Municipal  Act of 1919 allowed the capture and killing of dogs on unlicensed streets. NS. Former 
+                Postmaster of Tamil Nadu, Theodore Baskaran, explains: .. "And a purse-made from dog fur" (5). Since then, the number of dog killings by businesses 
+                has continued to increase. Similarly, the number of dogs on the street and  the number of deaths from human rabies.<br>
+            </p>
+        </section>
+
+        <section id="centers">
+            <h2>Centers</h2>
+            <span></span>
+                <br> <h6>People for Animals, New Delhi</h6>
+                <p>People for Animals, also known as PFA, is India's largest animal welfare organisation 
+                with a nationwide network of 26 hospitals, 165 units and 2.5 lakh members. PFA works towards 
+                the rescue and rehabilitation of needy animals. It runs shelters, ambulance services, 
+                sterilisation programs, treatment camps and disaster rescue missions. PFA actively patrols 
+                highways to check against overloading and smuggling of animals for slaughter. Interestingly, 
+                PFA is also on the Film and Censor Board of India to check animal abuse in films and has successfully 
+                filed cases against films that misuse animals.<br>
+                You can visit them by clicking <a href="https://www.peopleforanimalsindia.org/">here</a></p>
+                <br> <h6>Charlie's Animal Rescue Centre, Bengaluru</h6>
+                <p>CARE was started in January 2013 in Bengaluru and is dedicated to housing, rehabilitating, 
+                re-homing and giving timely medical aid to stray and abandoned animals. A 10-year-old 3-legged 
+                therapy dog became the inspiration behind this trust. They provide 24-hour veterinary care, 
+                ambulance services, inpatient facilities and adoption of dogs and cats. They are now building 
+                a medical centre which will consist of an OPD, operation theatre, x-ray and scanning facilities 
+                for street animals.<br>
+                You can visit them by clicking <a href="https://charlies-care.com/">here</a></p>
+                <br> <h6>The Bombay Society For The Prevention Of Cruelty To Animals (BSPCA), Mumbai</h6>
+                <p>A one-of-a-kind in India, BSPCA is a charitable organisation and has been running for over 
+                134 years. Its purpose is to prevent cruelty to animals and provide help and relief to all 
+                animals in Mumbai city. The animal hospital works 24 hours a day and treats around 10000 
+                animals every year which includes different species of animals and birds such as emus, geese, 
+                vultures, owls, turtles, horses, monkeys, dogs, and many more. They have started new projects 
+                such as a cardiac centre, an ICU, a blood bank, an animal birth control centre, an electric 
+                crematorium and a shelter for ownerless animals.<br>
+                You can visit them by clicking <a href="https://bombayspca.org/">here</a></p>
+                <br> <h6>The Sanjay Gandhi Animal Care Centre (SGACC), New Delhi</h6>
+                <p>The Sanjay Gandhi Animal Care Centre (SGACC) is India's oldest and Delhi's largest all-animal 
+                shelter. This all-animal facility was founded in 1980 and happens to be Asia’s largest, 
+                with over 3000 animals at any given point. It is equipped with special care units, OPD 
+                clinics, modern dental care, operation theatres, and much more. The SGACC mission is to 
+                provide sick, wounded and abandoned animals food, shelter, medication, kindness, safety 
+                and care for as long as they need it.<br>
+                You can visit them by clicking <a href="http://www.sanjaygandhianimalcarecentre.org/">here</a></p>
+                <br> <h6>Visakha Society For The Protection And Care For Animals, Andhra Pradesh</h6>
+                <p>The Visakha Society for the Protection and Care of Animals (VSPCA) in Visakhapatnam, Andhra Pradesh, 
+                has been operational since 1996. As mentioned on their website, the VSPCA works to stop the illegal 
+                trade in internationally-protected sea turtles, rescues cows and water buffalo too old or injured 
+                to be kept by their previous owners, as well as provides permanent happy sanctuary to hundreds of 
+                dogs, cats, birds, monkeys, horses, rabbits, tortoises, ducks and other animals who had been suffering 
+                severe abuse or neglect.<br>
+                You can visit them by clicking <a href="https://vspca.org/">here</a></p>
+                <br> <br> <center><font size="5px">These are some of the top Animal Welfare Centers in India. </font></center>   
+        </section>
+
+        <section id="useful-links">
+            <h2>Useful Links</h2>
+            <span></span>
+                <div class="usefullinksabc">
+                <ul>
+                    <li><a href="https://www.petaindia.com/">PETAI - People for Ethical Treatment of Animals, India. </a></li>
+                    <li><a href="https://www.peta.org/">PETAIO - People for Ethical Treatment of Animals, International Oragnistaion.</a></li>
+                    <li><a href="http://www.who.int/en/index">WHO - World Health Organization.</a></li>
+                    <li><a href="http://www.oie.int/en">OIE - World Organisation for Animal Health.</a></li>
+                    <li><a href="http://www.fao.org/ag/againfo/themes/animal-welfare/en/">FAO - Gateway to farm animal welfare.</a></li>
+                    <li><a href="http://www.ifahsec.org/">IFAH - International Federation for Animal Health.</a></li>
+                    <li><a href="https://helpanimalsindia.org/">HAI - Help Animals India.</a></li>
+                    <li><a href="https://www.worldanimalprotection.org.uk/">WAP - World Animal Protection.</a></li>
+                    <li><a href="https://bluecrossofindia.org/">TBCI - The Blue Cross of India.</a></li>
+                    <li><a href="https://www.rspca.org.uk/">RSPCA - Royal Society of the Prevention of Cruelty to Animals.</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="footererer">
+            <footer>
+                <div class="row">
+                    <div class="col">
+                        <img src="/static/Logo2white.png" class="logo">
+                        <p>The VELIFEM is an NGO for stray animals
+                           to provide them with all the necesary
+                           health care and attention they deserve.
+                        </p>
+                        <br> <br>
+                        <h3>Donate</h3><br>
+                        <p>We rely on you to donate in order<br>
+                           to rescue, feed and provide<br>
+                           necessary care and to keep fighting<br>
+                           for the animals.
+                        </p>
+                    </div>
+                    <div class="col2">
+                        <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful Links</h3> <br>
+                        <p> 
+                            <ul>
+                                <li><a href="/templates/NGOAboutus">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What We Do</a></li><br>
+                                <li><a href="/templates/NGOCareers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Careers</a></li><br>
+                                <li><a href="/templates/NGOFund">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fundraising</a></li><br>
+                                <li><a href="/templates/NGOVolunteer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Become a Volunteer</a></li><br>
+                                <li><a href="https://www.privacypolicygenerator.info/live.php?token=ggggxz4rBWLJRqrFm3QkyOhojH4PXDRn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy</a></li><br>
+                                <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=clAqjo4wjhWmYAP3BfeQJj2LZTXXGhxR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms and Conditions</a></li><br>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col3">
+                        <h3>Contact Us</h3><br>
+                        <p>
+                           <h5> Email </h5> <br>
+                           For Queries - <br> 
+                           <a href="mailto: queries.thevelifemngo@gmail.com">  queries.thevelifemngo@gmail.com <br> <br></a>
+                           For Registering a Complaint - <br>  
+                           <a href="mailto: fac.thevelifemngo@gmail.com"> fac.thevelifemngo@gmail.com <br></a> 
+                           <br>
+                           <h5> Call Us </h5> <br>
+                           Surat - 12345xxxx <br>
+                           Mumbai - 99875xxxx <br>
+                           Delhi - 84523xxxx <br>
+                        </p>
+                    </div>
+                    <div class="col2">
+                        <h3>Headquarters</h3><br>
+                        <p> 
+                            Bunglow Number xx, XYZ Society,<br>
+                            Near ABC Row House, EFG Marg,<br>
+                            Adajan, Surat - 395xxx.
+                        </p>
+                        <p> 
+                            Bunglow Number xx, XYZ Society,<br>
+                            Near ABC Row House, EFG Marg,<br>
+                            Bhayender, Mumbai - 400xxx.
+                        </p>
+                        <p> 
+                            Bunglow Number xx, XYZ Society,<br>
+                            Near ABC Row House, EFG Marg,<br>
+                            Karol Bagh, Delhi - 110xxx.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <script type="text/javascript">
+            window.addEventListener("scroll", function(){
+                var scroll = document.querySelector('.scrolltop');
+                scroll.classList.toggle("active" , window.scrollY > 500)
+            })
+            function scrollToTop(){
+                window.scrollTo({
+                    top: 0
+                })
+            }
+        </script>
+</body>
+</html> 
